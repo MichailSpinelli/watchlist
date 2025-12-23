@@ -36,7 +36,7 @@ async def delete_anime(mal_id: int, db: Session = Depends(get_db)):
     db.commit()
     return {"message": f"Anime con mal_id={mal_id} cancellato con successo"}
 
-# --- OTTIENI tutti gli anime ---
+# --- OTTIENI tutti gli anime ----
 @router.get("/all")
 async def get_all_anime(db: Session = Depends(get_db)):
     result = db_services.get_all_anime(db)
